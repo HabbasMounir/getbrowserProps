@@ -8,6 +8,21 @@
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script src='main.js'></script>
 </head>
+<style>
+    body{
+        color: white;
+        background: #8d8989;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 700;
+    }
+    h3{
+        display: flex;
+        margin:2vh 2.5vw;
+    }
+    span.true{color: rgb(73, 209, 73);}
+    span.false{color: rgb(255, 3, 3);}
+    span{margin-left: auto;}
+</style>
 <body>
     <script>
         var nVer = navigator.appVersion;
@@ -107,17 +122,21 @@ var isBlink = (isChrome || isOpera) && !!window.CSS;
 
 
 var output = 'Detecting browsers by ducktyping:<hr>';
-output += 'isFirefox: ' + isFirefox + '<br>';
-output += 'isChrome: ' + isChrome + '<br>';
-output += 'isSafari: ' + isSafari + '<br>';
-output += 'isOpera: ' + isOpera + '<br>';
-output += 'isIE: ' + isIE + '<br>';
-output += 'isEdge: ' + isEdge + '<br>';
-output += 'isEdgeChromium: ' + isEdgeChromium + '<br>';
-output += 'isBlink: ' + isBlink + '<br>';
+output += '<h3> isFirefox: <span> ' + isFirefox + ' </span></h3> ';
+output += '<h3> isChrome:  <span> ' + isChrome + '</span> <h3> ';
+output += '<h3> isSafari: <span>' + isSafari + '</span><h3> ';
+output += '<h3> isOpera: <span>' + isOpera + '</span> <h3> ';
+output += '<h3> isIE: <span> ' + isIE + '</span> <h3> ';
+output += '<h3> isEdge: <span>' + isEdge + '</span><h3> ';
+output += '<h3> isEdgeChromium: <span>' + isEdgeChromium + '</span><br>';
+output += '<h3> isBlink: <span>' + isBlink + '</span> <h3> ';
 document.body.innerHTML += output;
 
+    let spans =document.querySelectorAll('span')
+    spans.forEach(a=>{
+        a.classList.add(a.innerText)
 
+    })
 
     </script>
 </body>
